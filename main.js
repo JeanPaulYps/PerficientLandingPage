@@ -3,17 +3,47 @@ const categories = [
         name: 'Educacion',
         items: [
             {
+                title: 'Jira',
+                link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
+                imageLink: '../Assets/JIRA.png',
+                description: 'Espacio para aprender de programación',
+            },
+            {
                 title: 'Chill & Learn',
                 link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
                 imageLink: 'https://images.unsplash.com/photo-1633113089631-6456cccaadad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                 description: 'Espacio para aprender de programación',
-            }
+            },
+            {
+                title: 'Chill & Learn',
+                link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
+                imageLink: 'https://images.unsplash.com/photo-1633113089631-6456cccaadad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                description: 'Espacio para aprender de programación',
+            },
+            {
+                title: 'Chill & Learn',
+                link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
+                imageLink: 'https://images.unsplash.com/photo-1633113089631-6456cccaadad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                description: 'Espacio para aprender de programación',
+            },
+            {
+                title: 'Chill & Learn',
+                link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
+                imageLink: 'https://images.unsplash.com/photo-1633113089631-6456cccaadad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                description: 'Espacio para aprender de programación',
+            },
+            {
+                title: 'Chill & Learn',
+                link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
+                imageLink: 'https://images.unsplash.com/photo-1633113089631-6456cccaadad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                description: 'Espacio para aprender de programación',
+            },
         ]
     }
 ];
 
 const createNodeWithClass = (element, className) => {
-    let node = document.createElement('element');
+    let node = document.createElement(element);
     node.classList.add(className);
     return(node);
 }
@@ -25,7 +55,7 @@ const renderElements = (categories) => {
     for (category of categories){
         // let categoryContainer = document.createElement('div');
         // categoryContainer.classList.add('Category');
-        const categoryContainer = createNodeWithClass('div', 'category');
+        const categoryContainer = createNodeWithClass('div', 'Category');
 
 
         let categoryTitle = document.createElement('h2');
@@ -40,13 +70,14 @@ const renderElements = (categories) => {
         categoryContainer.append(categoryTitle, pages);
 
         for (item of category.items){
-            let link = document.createElement('a');
-            link.href = "#";
-
+            
             let pageContainer = document.createElement('div');
             pageContainer.classList.add('PageItem');
-            link.appendChild(pageContainer);
-    
+            
+            let link = document.createElement('a');
+            link.href = "#";
+            pageContainer.appendChild(link);
+            
             let pageImage = document.createElement('img'); 
             pageImage.classList.add('PageItem__Preview');
             pageImage.src = item.imageLink;
@@ -60,7 +91,11 @@ const renderElements = (categories) => {
             pageItemTitle.innerText = item.title;
             pageItemDescription.appendChild(pageItemTitle);
             
-            pages.appendChild(link);
+            let pageItemText = document.createElement('p');
+            pageItemText.innerText = item.description;
+            pageItemDescription.appendChild(pageItemText);
+
+            pages.appendChild(pageContainer);
         }
 
         

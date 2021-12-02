@@ -12,7 +12,6 @@ body {
 .Header {
     display: flex;
     align-items: center;
-    width: 80%;
     margin: 0 auto;
     color: #f5f5f5;
 }
@@ -23,13 +22,11 @@ body {
 
 .Header__Title {
     display: inline;
-    margin-left: 30px;
     font-weight: 300;
     font-family: 'Lato';
 }
 
 .Main {
-    width: 80%;
     margin: 30px auto 0;
     color: #f5f5f5;
     font-family: 'Lato';
@@ -40,6 +37,10 @@ body {
     font-weight: 300;
 }
 
+.Category {
+    margin: 0 auto;
+}
+
 .Category__Title {
     font-weight: normal;
     font-size: 36px;
@@ -48,13 +49,15 @@ body {
 .Pages {
     display: flex;
     margin-top: 30px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 10px;
 }
 
 .PageItem{ 
-    width: 400px;
-    height: 300px;
     border-radius: 10px;
     position: relative;
+    height: 300px;
 }
 
 .PageItem__Description {
@@ -79,10 +82,130 @@ body {
     margin: 10px 0 0;
 }
 
+.PageItem a {
+    position: absolute;
+    height: 100%;
+    width: 100% ;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
 
 .PageItem__Preview {
-    width:  100%;
-    height: 200px;
-    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 10px 10px 11px 11px;
     margin: 0;
 }
+
+
+@media (max-width: 900px)
+{
+    .Header {
+        width: 90%;
+    }
+
+    .Header__Title{
+        margin-left: 20px;
+    }
+
+    .Main{
+        width:90%;
+    }
+
+
+    .Header__Logo{
+        height: 30px;
+    }
+
+    .Pages {
+        justify-content: flex-start;
+    }
+
+    .PageItem{ 
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .PageItem__Description{
+        height: 110px;
+    }
+}
+
+@media (max-width: 400px)
+{
+    .PageItem {
+        height: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 900px)
+{
+    .PageItem {
+        height: 300px;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (min-width: 900px) 
+{
+    .Header {
+        width: 80%;
+    }
+
+    .Main{
+        width:80%;
+    }
+
+    .Header__Title{
+        margin-left: 30px;
+    }
+
+   
+    .PageItem__Description{
+        height: 100px;
+    }
+}
+
+
+@media (min-width: 900px) and (max-width: 1550px)
+{
+    .PageItem{ 
+        width: 90%;
+        max-width: 350px;
+        height: 250px;
+    }
+
+    .Pages {
+        justify-content: space-between;
+    }
+
+}
+
+@media (min-width: 1550px) 
+{
+    .PageItem{ 
+        width: 90%;
+        max-width: 350px;
+        height: 250px;
+    }
+
+    .Category {
+        max-width: 1650px;
+        
+    }
+
+}
+
+
+
+
+
+/*300 - 820/* 
+/*1000 - 1500*/
+/*Primero optimizar la vista mobile*/
