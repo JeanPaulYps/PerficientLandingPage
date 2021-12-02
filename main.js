@@ -5,7 +5,7 @@ const categories = [
             {
                 title: 'Jira',
                 link: 'https://morfeo.psl.com.co/training/?sfwd-courses=chill-learn',
-                imageLink: '../Assets/JIRA.png',
+                imageLink: 'Assets/JIRA.png',
                 description: 'Espacio para aprender de programación',
             },
             {
